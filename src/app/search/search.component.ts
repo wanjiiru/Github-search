@@ -32,14 +32,14 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
       this.githubUserRequest.githubUser(this.searchMe);
       this.users = this.githubUserRequest.users;
-      this.userRepos.gitRepos(this.searchMe,this.searchName);
+      this.userRepos.gitUserRepos(this.searchMe,this.searchName);
       console.log(this.userRepos.newRepository);
   }
 
   findUsers(){
         this.githubUserRequest.githubUser(this.searchMe);
         this.users = this.githubUserRequest.users;
-        this.userRepos.gitRepos(this.searchMe);
+        this.userRepos.gitUserRepos(this.searchMe);
   }
 
 }

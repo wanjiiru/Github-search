@@ -74,14 +74,13 @@ export class SearchRequestService {
     }
 
 
-    gitRepos(searchMe){
+    gitUserRepos(searchMe){
         interface ApiResponse{
-            name:string;
-            // html_url:string;
-            description:string;
-            created_at:Date;
+            name: string;
+            description: string;
+            created_at: Date;
         }
-        let myPromise = new Promise((resolve,reject)=>{
+        const myPromise = new Promise((resolve, reject ) =>{
             this.http.get<ApiResponse>("https://api.github.com/users/"+searchMe+"/repos?order=created&sort=asc?access_token="+environment.myApi).toPromise().then(getRepoResponse=>{
                 this.newRepo = getRepoResponse;
                 resolve();
@@ -101,13 +100,12 @@ gitRepos(searchName,toShow){
     }
     let promise = new Promise((resolve,reject)=>{
         this.http.get<ApiResponse>("https://api.github.com/search/repositories?q="+searchName+"&per_page="+toShow+"&sort=forks&order=asc?access_token="+environment.myApi).toPromise().then(getRepoResponse=>{
-            // console.log("success")
             this.searchRepo = getRepoResponse.items;
             resolve();
         },error=>{
             this.searchRepo = "error"
             reject(error);
-        })
+        });
     })
     return promise;
 }

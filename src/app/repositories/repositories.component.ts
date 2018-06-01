@@ -40,7 +40,7 @@ export class RepositoriesComponent implements OnInit {
 
 
       getDataFunction(){
-          this.gitRepoRequest.gitRepos(this.searchRepo,this.resultCount);
+          this.gitRepoRequest.gitRepos(this.searchRepo);
           if(this.gitRepoRequest.searchRepo==="error"){
               this.repoError=true;
           }
