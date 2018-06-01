@@ -1,7 +1,7 @@
 <div class="container page-top">
   <div class="row search">
     <div class="col-md-12 search-bar">
-      <app-search-form></app-search-form>
+      <app-search-form (getName)='findUser($event)'></app-search-form>
     </div>
   </div>
   <div class="row">
@@ -34,7 +34,7 @@
         </table>
       </div>
     </div>
-    <div class="col-md-4 image-end">
+    <div class="col-md-5 image-end">
       <img src="{{users.avatar_url}}" alt="Git User avatar loading ">
     </div>
   </div>

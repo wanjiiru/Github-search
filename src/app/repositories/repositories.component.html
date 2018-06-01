@@ -1,14 +1,14 @@
 <div class="container">
-  <div class="row search">
-    <div class="col-md-9 search-form text-center">
+  <div class="row ">
+    <div class="col-md-9 text-center">
       <app-search-form (getName)='searchRepos($event)'></app-search-form>
       <br />
     </div>
   </div>
-  <div class="row main-content">
-    <div class="col-md-10 user-details">
+  <div class="row">
+    <div class="col-md-11">
       <div >
-        <div class="table table-striped">
+        <div class="table">
           <table class="table">
             <tbody>
              <tr *ngFor=" let repository of gitRepoRequest.searchRepo" >
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-   <div class="col-md-10 loadMorebtn">
+   <div class="col-md-10 seeMorebtn">
       <button class="btn btn-primary" (click)="seeMore()">See more</button>
     </div>
 

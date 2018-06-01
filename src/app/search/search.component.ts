@@ -13,17 +13,17 @@ import {User} from '../user';
 })
 export class SearchComponent implements OnInit {
     public searchMe:string = "wanjiiru";
-    public githubUser :string;
+    public githubUser:string;
 
-    users:User;
-    repository :any;
+    users: User ;
+    repository:any;
 
 
-    searchUser(name){
+    findUser(){
         this.githubUser = '';
         this.searchMe  = 'wanjiiru';
-        this.githubUser = this.githubUser;
-        this.ngOnInit()
+        this.searchMe = this.githubUser;
+        this.ngOnInit();
     }
 
 
@@ -32,9 +32,9 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
       this.githubUserRequest.githubUser(this.searchMe);
       this.users = this.githubUserRequest.users;
-      this.userRepos.gitUserRepos(this.searchMe,this.searchName);
+      this.userRepos.gitUserRepos(this.searchMe);
       console.log(this.userRepos.newRepository);
-  }
+  },
 
   findUsers(){
         this.githubUserRequest.githubUser(this.searchMe);
