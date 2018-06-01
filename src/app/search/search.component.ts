@@ -9,7 +9,7 @@ import {User} from '../user';
   selector: 'app-search',
   templateUrl: './search.component.html',
     providers:[SearchRequestService];
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'
 })
 export class SearchComponent implements OnInit {
     public searchMe:string = "wanjiiru";
@@ -32,14 +32,14 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
       this.githubUserRequest.githubUser(this.searchMe);
       this.users = this.githubUserRequest.users;
-      this.userRepos.gitUserRepos(this.searchMe);
-      console.log(this.userRepos.newRepository);
-  },
+      this.userRepos.gitRepos(this.searchMe, this.githubUser);
+      console.log(this.userRepos.newRepo);
+  }
 
   findUsers(){
         this.githubUserRequest.githubUser(this.searchMe);
         this.users = this.githubUserRequest.users;
-        this.userRepos.gitUserRepos(this.searchMe);
+        this.userRepos.gitRepos(this.searchMe,this.githubUser);
   }
 
 }
