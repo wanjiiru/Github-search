@@ -1,6 +1,6 @@
-<form (ngSubmit)=getInfo() #searchForm="ngForm">
+  <form (ngSubmit)="lookFor(searchForm)" #searchForm="ngForm">
   <div class="form-group">
-    <input type="text" class="form-control" name="name" placeholder="Enter repository"[(ngModel)]= "searchWord">
+    <input type="text" class="form-control" name="name" placeholder="Enter repository"[(ngModel)]= "searchInfo.find"  #find='ngModel'>
     <button type="submit" class="btn"> Search</button>
   </div>
 </form>

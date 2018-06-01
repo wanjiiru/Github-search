@@ -1,5 +1,5 @@
-import {Component, OnInit, Output,EventEmitter} from '@angular/core';
-import {Search} from '../search/search.component';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Search} from '../search';
 
 @Component({
   selector: 'app-search-form',
@@ -11,7 +11,7 @@ export class SearchFormComponent implements OnInit {
     @Output() getName = new EventEmitter<Search>();
 
     lookFor(data){
-        this.getName.emit(data.value.find());
+        this.getName.emit(data.value.find);
         data.reset();
     }
 

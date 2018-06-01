@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchRequestService} from '../search-request.service';
 import {Repository} from '../repository';
+import {Search} from '../search';
 
 @Component({
   selector: 'app-repositories',
@@ -44,7 +45,7 @@ export class RepositoriesComponent implements OnInit {
               this.repoError=true;
           }
           else{
-              this.repoError=false;
+              // this.repoError=false;
           }
       }
 
