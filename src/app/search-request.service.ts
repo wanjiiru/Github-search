@@ -10,21 +10,29 @@ import { HttpClient} from '@angular/common/http';
 })
 export class SearchRequestService {
     repository: Repository ;
-    user: User ;
+    users: User ;
     newRepository: any ;
     searchRepo:any;
+    newRepo:any;
+
 
 
 
   constructor(private http: HttpClient ) {
       this.repository = new Repository('', ''  , '' , new Date() );
+      this.users = new User('','','','','','','')
   }
-  searchGit(searchName) {
+  githubUser(searchName) {
       interface ApiResponse {
           name: string;
           html_url: string;
           description: string;
           created_at: Date;
+          login: string;
+          avatar_url: string;
+          public_repos: number;
+          followers: number;
+          following: number;
       }
 
       let promise = new Promise((resolve, reject ) => {
