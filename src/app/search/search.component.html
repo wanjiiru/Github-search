@@ -12,7 +12,7 @@
           <tbody>
           <tr>
             <th scope="row">Github Username:</th>
-            <td> <a href="{{users.html_url}}" target="_blank">{{users.login}}</a></td>
+            <td> <a>{{users.login}}</a></td>
           </tr>
           <tr>
             <th scope="row">Number of Repos:</th>
@@ -42,12 +42,12 @@
 </div>
 <div class="container">
   <div class="row">
-    <!--<div *ngIf="gitUserRepos.gitUserError===false" class="col-md-12 user-repos">-->
+    <div *ngIf="gitUserRepos" class="col-md-12 user-repos">
       <h3 >Repositories</h3>
       <div class="table git-table">
         <table class="table my-repos">
           <tbody>
-          <!--<tr *ngFor='let repository of gitUserRepos.newRepo'>-->
+          <tr *ngFor='let repository of gitUserRepos.newRepo'>
             <td>
               <a href="{{repository.html_url}}" target="_blank" >{{repository.name}}</a>
               <br>
