@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row search">
     <div class="col-md-9 search-form text-center">
-      <app-search-form></app-search-form>
-      <!--<p>Enter repository name</p>-->
+      <app-search-form (getName)='searchRepos($event)'></app-search-form>
       <br />
     </div>
   </div>
@@ -12,16 +11,17 @@
         <div class="table table-striped">
           <table class="table">
             <tbody>
-            <tr>
+             <tr *ngFor=" let repository of gitRepoRequest.searchRepo" >
               <td>
                 <h4>
-                  <!--<a href="{{repository.html_url}}" >{{repository.name}}</a>-->
+                  <a href="{{repository.html_url}}" >{{repository.name}}</a>
                 </h4>
                 <p> Repository Owner:
-                  <!--<a href="{{repository.owner.html_url}}" target="_blank">{{repository.owner.login}}</a>-->
+                  <a href="{{repository.owner.html_url}}" target="_blank">{{repository.owner.login}}</a>
+
                 </p>
-                <p>Date Created</p>
-                <p>Description</p>
+                <p>Date Created : {{repository.created_at|date}}</p>
+                <p>Description : {{repository.description}}</p>
               </td>
             </tr>
             </tbody>
@@ -31,7 +31,7 @@
       </div>
     </div>
    <div class="col-md-10 loadMorebtn">
-      <button class="btn btn-info">See more</button>
+      <button class="btn btn-primary" (click)="seeMore()">See more</button>
     </div>
 
   </div>

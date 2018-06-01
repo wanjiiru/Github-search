@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// import {HttpClient} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,6 +11,9 @@ import {RoutingModule} from './routing/routing.module';
 import { RouterModule } from '@angular/router';
 import { SearchFormComponent } from './search-form/search-form.component';
 import {FormsModule} from '@angular/forms';
+import {SearchRequestService} from './search-request.service';
+
+
 
 
 
@@ -26,9 +31,11 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
       RoutingModule,
       RouterModule,
-      FormsModule
+      FormsModule,
+      // HttpClient,
+      HttpClientModule
   ],
-  providers: [],
+  providers: [SearchRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
