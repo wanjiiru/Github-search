@@ -17,12 +17,12 @@ export class SearchRequestService {
 
     constructor(private http: HttpClient ) {
       this.repository = new Repository('', ''  , '' , new Date() );
-      this.users = new User('', '', '', 0, new Date(), 0, 0);
+      this.users = new User('', '', '', 0,'', new Date(), 0, 0);
   }
   githubUser(searchName) {
       interface ApiResponse {
           name: string;
-          // html_url: string;
+          html_url: string;
           description: string;
           created_at: Date;
           login: string;
@@ -35,6 +35,7 @@ export class SearchRequestService {
       let promise = new Promise((resolve) => {
           this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?access_token=' + environment.myApi).toPromise().then(getResponse => {
                   this.users.name = getResponse.name;
+                  this.users.html_url = getResponse.html_url;
                   this.users.login = getResponse.login;
                   this.users.avatar_url = getResponse.avatar_url;
                   this.users.public_repos = getResponse.public_repos;

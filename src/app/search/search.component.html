@@ -13,7 +13,8 @@
           <tbody>
           <tr>
             <th scope="row">Github Username:</th>
-            <td> <a>{{users.login}}</a></td>
+              <td> <a href="{{users.html_url}}" target="_blank">{{users.login}}</a></td>
+
           </tr>
           <tr>
             <th scope="row">Number of Repos:</th>
@@ -50,8 +51,9 @@
           <tbody>
           <tr *ngFor='let repository of userRepos.newRepository'>
             <td>
-              <a>{{repository.name}}</a>
-              <br>
+                <a href="{{repository.html_url}}" target="_blank" >{{repository.name}}</a>
+
+                <br>
               <p class="desc">Description: {{repository.description}}</p>
               <br>
               <p>Date Created: {{repository.created_at | date}}</p>
