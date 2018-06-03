@@ -24,9 +24,11 @@ td a {
     font-size: 25px;
 }
 
+p {
+    text-indent: 2rem;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 
-
-/* body*/
 .col-md-12 {
     text-align: center;
 }
@@ -35,7 +37,7 @@ td a {
 }
 
 
-/* avatar*/
+/* profile*/
 img {
     max-width: 60%;
     border-radius: 600px;
