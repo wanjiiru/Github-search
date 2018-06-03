@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { SearchFormComponent } from './search-form/search-form.component';
 import {FormsModule} from '@angular/forms';
 import {SearchRequestService} from './search-request.service';
+import { UpperCasePipe } from './upper-case.pipe';
 
 
 
@@ -27,7 +28,8 @@ import {SearchRequestService} from './search-request.service';
     NavbarComponent,
     SearchComponent,
     RepositoriesComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    UpperCasePipe
   ],
   imports: [
     BrowserModule,
