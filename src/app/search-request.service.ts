@@ -72,7 +72,7 @@ gitRepos(searchName, toShow) {
         items: any;
     }
     const promise = new Promise((resolve, reject) => {
-        this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + '&per_page=' + toShow + '&sort=forks&order=asc?access_token=' + environment.myApi).toPromise().then(getRepoResponse => {
+        this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + toShow + '&sort=forks&order=asc?access_token=' + environment.myApi).toPromise().then(getRepoResponse => {
             this.searchRepo = getRepoResponse.items;
             resolve();
         }, error => {

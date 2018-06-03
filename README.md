@@ -1,6 +1,7 @@
 # GithubSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+A single page application for searching github users and repositories.
+
 
 ## Development server
 

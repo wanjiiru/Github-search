@@ -20,7 +20,7 @@ export class RepositoriesComponent implements OnInit {
 
     searchRepos() {
         this.searchRepo = '';
-        this.resultCount = 10;
+        this.resultCount = 6;
         this.getDataFunction();
 
     }
@@ -35,16 +35,13 @@ export class RepositoriesComponent implements OnInit {
   ngOnInit() {
         this.resultCount = 5;
       this.gitRepoRequest.gitRepos(this.searchRepo, this.resultCount);
-          // this.repoError = true;
   }
 
 
       getDataFunction() {
           this.gitRepoRequest.gitRepos(this.searchRepo, this.resultCount);
-          if (this.gitRepoRequest.searchRepo === 'error') {
-              // this.repoError = true;
-          } else {
-              // this.repoError=false;
+          if (this.gitRepoRequest.searchRepo !== 'error') {
+              return;
           }
       }
 
