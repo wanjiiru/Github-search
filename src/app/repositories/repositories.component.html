@@ -15,11 +15,10 @@
              <tr *ngFor=" let repository of gitRepoRequest.searchRepo" >
               <td>
                 <h4>
-                  <a href="{{repository.html_url}}" >{{repository.name}}</a>
+                  <a style="text-align: center" href="{{repository.html_url}} " >{{repository.name}}</a>
                 </h4>
-                <p> Repository Owner:
+                <p > Repository Owner:
                   <a href="{{repository.owner.html_url}}" target="_blank">{{repository.owner.login}}</a>
-
                 </p>
                 <p>Date Created : {{repository.created_at|date}}</p>
                 <p>Description : {{repository.description}}</p>

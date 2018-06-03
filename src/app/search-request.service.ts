@@ -82,4 +82,27 @@ gitRepos(searchName, toShow) {
     });
     return promise;
 }
+
+
+
+
+//
+    //
+    //   const promise = new Promise((resolve, reject ) => {
+    //       this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + environment.myApi).toPromise().then(response => {
+    //
+    //                 this.repository.name = response.name;
+    //                 // this.repository.html_url = response.html_url;
+    //                 this.repository.description = response.description;
+    //                 this.repository.created_at = response.created_at;
+    //                 resolve();
+    //             },
+    //             error => {
+    //                 reject(error);
+    //             }
+    //         );
+    //     });
+    //
+    //     return promise;
+    // }
 }
