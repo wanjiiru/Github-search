@@ -1,15 +1,15 @@
 <div class="container page-top">
   <ng-progress></ng-progress>
-  <div class="row search">
-    <div class="col-md-12 search-bar">
+  <div class="row ">
+    <div class="col-md-12">
       <app-search-form (getName)='findUser($event)'></app-search-form>
     </div>
   </div>
   <div class="row">
     <div class="col-md-7">
-      <div class="table git-table">
+      <div class="table table-striped table-bordered">
         <h3> {{users.name }}</h3>
-        <table class="table info-bio">
+        <table class="table table-striped table-light">
           <tbody>
           <tr>
             <th scope="row">Github Username:</th>
@@ -45,7 +45,7 @@
   <div class="row">
     <div  class="col-md-12">
       <h3 >Repositories</h3>
-      <div class="table table-striped table-bordered">
+      <div class="table table-striped">
         <table class="table">
           <tbody>
           <tr *ngFor='let repository of userRepos.newRepository'>

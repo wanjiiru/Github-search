@@ -1,38 +1,11 @@
-/* body*/
-.col-md-12 {
-    text-align: center;
-}
-.container {
-    margin-top: 2rem;
-}
-a:hover {
-    text-decoration: none;
-    color: #B71427;
-}
 
-/* avatar*/
-img {
-    max-width: 80%;
-    border-radius: 670px;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
-.image-right {
-    padding-top: 8rem;
-    text-align: center;
-}
-
-/*github user*/
-.git-user {
-    padding-top: 1rem;
-}
-.git-user-content {
-    padding-bottom: 7rem;
-}
-.git-table h3 {
-    justify-content: center;
-    font-size: 70px;
-    display: flex;
-}
-
+/*.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {*/
+    /*background-color: red;*/
+/*}*/
 /*github user repos*/
 .my-repos p {
     text-indent: 3rem;
@@ -51,18 +24,26 @@ td a {
     font-size: 25px;
 }
 
-/*search form*/
-.search-form p {
-    font-size: 20px;
-    margin: 0;
-    justify-content: left;
-    align-items: left;
-    position: sticky
+
+
+/* body*/
+.col-md-12 {
+    text-align: center;
+}
+.container {
+    margin-top: 2rem;
 }
 
-/*media query*/
-@media (min-width: 992px) {
-    .navbar-expand-lg {
-        height: 85px;
-    }
+
+/* avatar*/
+img {
+    max-width: 60%;
+    border-radius: 600px;
 }
+.image-right {
+    padding-top: 8rem;
+    text-align: center;
+}
+
+/**/
+
