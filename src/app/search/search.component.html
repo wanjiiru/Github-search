@@ -35,31 +35,30 @@
       </div>
     </div>
     <div class="col-md-5 image-end">
-      <img src="{{users.avatar_url}}" alt="Git User avatar loading ">
+      <img src="{{users.avatar_url}}">
     </div>
   </div>
   <hr>
 </div>
 <div class="container">
   <div class="row">
-    <p>sdfghj</p>
-    <div *ngIf="gitUserRepos" class="col-md-12 user-repos">
+    <div  class="col-md-12">
       <h3 >Repositories</h3>
-      <div class="table git-table">
-        <table class="table my-repos">
+      <div class="table table-striped table-bordered">
+        <table class="table">
           <tbody>
-          <tr *ngFor='let repository of gitUserRepos.newRepo'>
+          <tr *ngFor='let repository of userRepos.newRepository'>
             <td>
-              <a href="{{repository.html_url}}" target="_blank" >{{repository.name}}</a>
+              <a>{{repository.name}}</a>
               <br>
               <p class="desc">Description: {{repository.description}}</p>
               <br>
               <p>Date Created: {{repository.created_at | date}}</p>
             </td>
-          <!--</tr>-->
+          </tr>
           </tbody>
         </table>
       </div>
-    <!--</div>-->
+    </div>
   </div>
 </div>

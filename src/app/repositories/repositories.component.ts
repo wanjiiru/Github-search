@@ -25,7 +25,7 @@ export class RepositoriesComponent implements OnInit {
 
     }
 
-    seeMore(){
+    seeMore() {
         this.getDataFunction();
     }
 
@@ -34,17 +34,16 @@ export class RepositoriesComponent implements OnInit {
 
   ngOnInit() {
         this.resultCount = 5;
-      this.gitRepoRequest.gitRepos(this.searchRepo,this.resultCount);
-          this.repoError=true;
+      this.gitRepoRequest.gitRepos(this.searchRepo, this.resultCount);
+          // this.repoError = true;
   }
 
 
-      getDataFunction(){
-          this.gitRepoRequest.gitRepos(this.searchRepo);
-          if(this.gitRepoRequest.searchRepo==="error"){
-              this.repoError=true;
-          }
-          else{
+      getDataFunction() {
+          this.gitRepoRequest.gitRepos(this.searchRepo, this.resultCount);
+          if (this.gitRepoRequest.searchRepo === 'error') {
+              // this.repoError = true;
+          } else {
               // this.repoError=false;
           }
       }

@@ -12,6 +12,7 @@ export class SearchFormComponent implements OnInit {
 
     lookFor(data){
         this.getName.emit(data.value.find);
+        console.log(data.value.find)
         data.reset();
     }
 

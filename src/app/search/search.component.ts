@@ -1,45 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchRequestService} from '../search-request.service';
 import {Repository} from '../repository';
-import {Search} from '../search';
 import {User} from '../user';
 
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-    providers:[SearchRequestService];
-  styleUrls: ['./search.component.css'
+    providers: [SearchRequestService],
+  styleUrls: ['./search.component.css']
 })
+
 export class SearchComponent implements OnInit {
-    public searchMe:string = "wanjiiru";
-    public githubUser:string;
+    public searchMe = 'wanjiiru';
+    public githubUser: string;
 
     users: User ;
-    repository:any;
+    repository: Repository;
+    public searchRepo: string;
+    public resultCount = 12;
 
 
-    findUser(){
+    findUser(username) {
         this.githubUser = '';
-        this.searchMe  = 'wanjiiru';
-        this.searchMe = this.githubUser;
+        this.searchMe  = username;
+        // this.searchMe = this.githubUser;
         this.ngOnInit();
     }
 
 
-  constructor(public githubUserRequest:SearchRequestService, public userRepos:SearchRequestService) { }
+  constructor(public githubUserRequest: SearchRequestService, public userRepos: SearchRequestService) { }
 
   ngOnInit() {
       this.githubUserRequest.githubUser(this.searchMe);
       this.users = this.githubUserRequest.users;
-      this.userRepos.gitRepos(this.searchMe, this.githubUser);
-      console.log(this.userRepos.newRepo);
+      this.userRepos.gitUserRepos(this.searchMe);
+      console.log(this.userRepos);
   }
 
-  findUsers(){
-        this.githubUserRequest.githubUser(this.searchMe);
-        this.users = this.githubUserRequest.users;
-        this.userRepos.gitRepos(this.searchMe,this.githubUser);
-  }
+
+
+
+
+
+
+    searchRepos() {
+        this.searchRepo = '';
+        this.resultCount = 10;
+
+    }
+
+
+    // findUsers() {
+  //       this.githubUserRequest.githubUser(this.searchMe);
+  //       this.users = this.githubUserRequest.users;
+  //       this.userRepos.gitUserRepos(this.searchMe);
+  // }
 
 }
