@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import {HttpClient} from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,6 +34,8 @@ import {SearchRequestService} from './search-request.service';
       RoutingModule,
       RouterModule,
       FormsModule,
+      NgProgressModule.forRoot(),
+      NgProgressHttpModule,
       // HttpClient,
       HttpClientModule
   ],
