@@ -11,7 +11,7 @@
         <div class="table">
           <table class="table">
             <tbody>
-             <tr *ngFor=" let repository of gitRepoRequest.searchRepo" >
+             <tr *ngFor=" let repository of gitRepoRequest.searchRepos" >
               <td>
                 <h4>
                   <a style="text-align: center" href="{{repository.html_url}} " >{{repository.name}}</a>
@@ -28,9 +28,6 @@
           <hr>
         </div>
       </div>
-    </div>
-   <div class="col-md-10 seeMorebtn">
-      <button class="btn btn-primary" (click)="seeMore()">See more</button>
     </div>
 
   </div>

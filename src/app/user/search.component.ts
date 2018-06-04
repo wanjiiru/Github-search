@@ -39,11 +39,6 @@ export class SearchComponent implements OnInit {
   }
 
 
-
-
-
-
-
     searchRepos() {
         this.searchRepo = '';
         this.resultCount = 10;

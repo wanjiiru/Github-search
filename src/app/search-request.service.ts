@@ -3,7 +3,7 @@ import {environment} from '../environments/environment';
 import {Repository} from './repository';
 import {User} from './user';
 import { HttpClient} from '@angular/common/http';
-// import {Search} from './search';
+// import {Search} from './user';
 
 
 @Injectable({
@@ -72,7 +72,7 @@ gitRepos(searchName, toShow) {
         items: any;
     }
     const promise = new Promise((resolve, reject) => {
-        this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + toShow + '&sort=forks&order=asc?access_token=' + environment.myApi).toPromise().then(getRepoResponse => {
+        this.http.get<ApiResponse>('https://api.github.com/user/repositories?q=' + searchName + toShow + '&sort=forks&order=asc?access_token=' + environment.myApi).toPromise().then(getRepoResponse => {
             this.searchRepo = getRepoResponse.items;
             resolve();
         }, error => {

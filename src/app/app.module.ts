@@ -6,8 +6,8 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SearchComponent } from './search/search.component';
+import { NavbarComponent } from './navigation/navbar.component';
+import { SearchComponent } from './user/search.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import {RoutingModule} from './routing/routing.module';
 import { RouterModule } from '@angular/router';
