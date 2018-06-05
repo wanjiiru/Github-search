@@ -43,8 +43,7 @@ export class SearchRequestService {
                   this.users.followers = getResponse.followers;
                   this.users.following = getResponse.following;
                   resolve();
-              },
-          );
+              },);
       });
       return promise;
 
