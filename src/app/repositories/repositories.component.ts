@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchRequestService} from '../search-request.service';
 import {Repository} from '../repository';
-// import {Search} from '../user';
+
 
 @Component({
   selector: 'app-repositories',
@@ -13,10 +13,7 @@ export class RepositoriesComponent implements OnInit {
 
     repository: Repository;
     public searchRepo: string;
-    public resultCount = 15;
-
-
-
+    public resultCount = 12;
 
     searchRepos() {
         this.searchRepo = '';
@@ -25,22 +22,16 @@ export class RepositoriesComponent implements OnInit {
 
     }
 
-    seeMore() {
-        this.resultCount = 9;
-        this.getDataFunction();
-    }
-
-
     constructor(public gitRepoRequest: SearchRequestService ) { }
 
   ngOnInit() {
         this.resultCount = 5;
-      this.gitRepoRequest.gitRepos(this.searchRepo, this.resultCount);
+      this.gitRepoRequest.gitRepos(this.searchRepo);
   }
 
 
       getDataFunction() {
-          this.gitRepoRequest.gitRepos(this.searchRepo, this.resultCount);
+          this.gitRepoRequest.gitRepos(this.searchRepo);
 
       }
 

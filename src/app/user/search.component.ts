@@ -24,7 +24,6 @@ export class SearchComponent implements OnInit {
     findUser(username) {
         this.githubUser = '';
         this.searchMe  = username;
-        // this.searchMe = this.githubUser;
         this.ngOnInit();
     }
 
@@ -44,12 +43,4 @@ export class SearchComponent implements OnInit {
         this.resultCount = 10;
 
     }
-
-
-    // findUsers() {
-  //       this.githubUserRequest.githubUser(this.searchMe);
-  //       this.users = this.githubUserRequest.users;
-  //       this.userRepos.gitUserRepos(this.searchMe);
-  // }
-
 }
